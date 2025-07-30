@@ -1660,23 +1660,378 @@ class Program
         san.qualification = "MCA SET ";
         san.salary = 50000;
 
-
-        san.Printdetails();
-
-
-    }
-
-
-
-
-
-
-
-
+       san.Printdetails();
+   }
 
 }*/
 
 
+// 
+/*
+class Program
+{
+    public class Person
+    {
+        public void PersonDetails()
+        {
+            string name = "Avinash Yadav";
+            Console.WriteLine($"The person Name is {name}");
+
+            int age = 21;
+            Console.WriteLine( $"Person Age is {age} Years");
+                
+
+        }
+
+    }
+    public class Student:Person 
+    {
+        public void StudRoll()
+        {
+            int Rollnum = 77;
+            Console.WriteLine( $"Student Roll Number is {Rollnum}");
+
+        }
+
+    }
+    static void Main( string[] args)
+    {
+        Student stds= new Student();
+        stds.PersonDetails ();
+        stds .StudRoll();
+    }
+    
+
+
+}
+
+*/
+
+/*
+class Program
+{
+    public class Employee
+    {
+        public string Name;
+        public long Salary;
+        public Employee(string name, long salary)
+        {
+            Name = name;
+            Salary = salary;
+        }
+
+        public virtual void EmpDetails()
+        {
+            Console.WriteLine( "This is Employe Details ");
+        }
+
+
+    }
+    public class Manager : Employee
+    {
+        public string Department;
+        public Manager(string name, long salary, string department) : base(name, salary)
+        {
+            Department = department;
+        }
+        public void Display()
+        {
+            Console.WriteLine($"Employe Name :{Name}" );
+            Console.WriteLine( $"Employe salary:{Salary }" );
+            Console.WriteLine($"Department : {Department }" );
+
+            
+        }
+        public override void EmpDetails()
+        {
+            base.EmpDetails();
+        }
+    }
+    static void Main( string[] args)
+    {
+        Manager mgrs = new Manager("Alice", 60000, "HR");
+        mgrs.EmpDetails();
+        mgrs.Display();
+
+    }
+
+
+}
+*/
+
+/*
+class Program
+{
+    public class Animal
+    {
+        public void Display()
+        {
+            Console.WriteLine( "I am An Animal ");
+        }
+    }
+    public class Mammal:Animal
+    {
+        public void Show()
+        {
+            Console.WriteLine( "I am Mammal");
+        }
+    }
+    public class Dog: Mammal
+    {
+        public void ShowInfo()
+        {
+            Console.WriteLine( "I am a Dog ");
+        }
+
+    }
+    static void Main(string[] args)
+    {
+        Dog dg = new Dog();
+        dg .Display ();
+        dg .Show ();
+        dg .ShowInfo ();
+
+    }
+    
+
+    
+}
+*/
+
+
+
+/*
+class Program
+{
+    abstract class Shape
+    {
+        public abstract double  Area();
+
+    }
+    class Circle:Shape
+    {
+        public double Radius;
+
+        public Circle (double radius)
+        {
+            Radius = radius;
+    }
+
+        public override double  Area()
+        {
+            return Math.PI * Radius * Radius;
+        }
+    }
+    class Square : Shape
+    {
+
+        public double Side;
+
+        public Square (double side)
+        {
+            Side = side;
+        }
+        public override double Area()
+        {
+            return Side * Side;
+        }
+    }
+    static void Main(string[] args)
+    {
+        Circle cs = new Circle(10);
+        Square sqr = new Square(10);
+        Console.WriteLine("Area of Circle" + cs.Area());
+        Console.WriteLine( "Area of Square "+ sqr .Area ());
+
+    }
+}
+*/
+
+/*
+
+class Account
+{
+    public int AccountNumber;
+    public double Balance;
+
+
+    public Account(int accountNumber, double balance)
+    {
+        AccountNumber = accountNumber;
+        Balance = balance;
+    }
+}
+
+class SavingsAccount : Account
+{
+    public double InterestRate;
+
+    // Constructor of SavingsAccount using base
+    public SavingsAccount(int accountNumber, double balance, double interestRate)
+        : base(accountNumber, balance)
+    {
+        InterestRate = interestRate;
+    }
+
+    // Method to calculate interest
+    public double CalculateInterest()
+    {
+        return Balance * InterestRate / 100;
+    }
+
+    public void Display()
+    {
+        Console.WriteLine("Account Number: " + AccountNumber);
+        Console.WriteLine("Balance: " + Balance);
+        Console.WriteLine("Interest: " + CalculateInterest());
+    }
+}
+
+class Program
+{
+    static void Main(string [] args)
+    {
+        SavingsAccount acc = new SavingsAccount(123456, 10000, 5);
+        acc.Display();
+    }
+}*/
+/*
+ * 
+ * Method Overloading Example
+
+class Program
+{
+    public class Student
+    {
+        public void Show(int roll)
+        {
+            Console.WriteLine( $"This is Student roll number {roll}");
+        }
+        public void Show(string name, long fees )
+        {
+                      
+            Console.WriteLine( $"This is Student name : {name }");
+            Console.WriteLine($"Feese : {fees }");
+
+        }
+        public void Show(string dist, string village)
+        {
+            Console.WriteLine( $"village : { village}" );
+            Console.WriteLine( $"District: {dist }" );
+        }
+        
+
+    }
+    static void Main(string[] args)
+    {
+        Student  cg =  new Student ();
+        cg.Show(77);
+        cg.Show("Avinash", 50000);
+        cg.Show("Solapur", "Akluj");
+    }
+}
+*/
+
+
+/*
+class Program
+{
+    public class Employee
+    {
+        public virtual void Details()
+        {
+            String Name = "Employee1";
+            int age = 25;
+            Console.WriteLine($"Employee Name: {Name }" );
+            Console.WriteLine( $"Employee Age: {age }");
+
+        }
+    }
+    public class Manager:Employee
+    {
+        public override void Details()
+        {
+            string ManagerName = "Manager1";
+            string Department = "IT";
+
+            Console.WriteLine($"Manager Name: {ManagerName}");
+            Console.WriteLine($"DepartMent :{Department}");
+        }   
+
+    }
+    static void Main( string[] args)
+    {
+        Employee emp = new Manager();
+        emp .Details();
+
+    }
+
+}
+*/
+/*
+namespace codeLab
+{
+    class Program
+    {
+
+        public abstract class Car
+        {
+
+            public abstract void CarName();
+
+            public abstract void Remote();
+            public abstract void Engine();
+
+            public void greet()
+            {
+                Console.WriteLine( "Thank You ");
+            }
+                      
+                                                
+        }
+        public class Car_Details : Car
+        {
+            public override void CarName()
+            {
+                Console.WriteLine( "Mahindra Scorpio ");
+            }
+
+            public override void Engine()
+            {
+                Console.WriteLine( "This is 2500cc Mhoak Enginee");
+                Console.WriteLine( "This Powerfull Engine Can generate 900 nm Torque");
+            }
+
+            public override void Remote()
+            {
+                Console.WriteLine( "Remote is On=> Engine is started ");
+              
+            }
+            static void Main(string[] args)
+            {
+                Car cr = new Car_Details();
+                cr.CarName ();
+                cr.Remote ();
+                cr.Engine();
+                cr.greet ();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
 
 
 
@@ -1694,17 +2049,119 @@ class Program
 
 
 
+}
+*/
+/*
+class Program
+{
+    static void Main(string[] args)
+    {
+        IBank bank = new Bank();
+
+        bank.BankName();
+        bank.Account_Number();
+        bank.Account_Bal();
+
+    }
+}
+interface IBank
+{
+    void Account_Bal();
+    void Account_Number();
+
+    void BankName()
+    {
+        Console.WriteLine("HDFC");
+    }
+}
+public class Bank : IBank
+{
+    public void Account_Bal()
+    {
+        Console.WriteLine("1200000");
+    }
+
+    public void Account_Number()
+    {
+        Console.WriteLine("8767390012");
+    }
+
+
+}
+
+*/
+
+// This is an Example of Encapsulation => Hiding a data
+// prevention of data to Accesss every where we can use Easily or modified it 
+
+
+/*
+class Program
+{
+    public class BankAccount
+    {
+        private int Bal = 10000;
+
+        public void Deposit(int DepositAmount)
+        {
+            Bal += DepositAmount;
+        }
+        public void Withdraw(int WithdrawAmount)
+        {
+            Bal -= WithdrawAmount;
+        }
+        public int GetBal()
+        { return Bal; }
+    }
+    static void Main(string[] args)
+    {
+        BankAccount bank = new BankAccount();
+        bank.Deposit(50000);
+        bank.Withdraw(30000);
+        int i= bank.GetBal();
+        Console.WriteLine($"The Remaining Account Balance is {i}");
 
 
 
+    }
+}
+
+*/
 
 
+class Myclass
+{
+    public class Student
+    {
+        private int Fees = 40000;
+
+        public void Feese(int feesPaid)
+        {
+            Fees += feesPaid;
+
+        }
+        public void RetFeese(int feesReturn)
+        {
+            Fees -= feesReturn;
+        }
+        public int getFeese()
+        {
+            return Fees;
+        }
+
+    }
+    static void Main(string[] args)
+    {
+        Student student = new Student();
+        student.Feese(50000);
+        student.RetFeese(25000);
+
+        int i = student.getFeese();
+        Console.WriteLine($"Total Feese Paid By Student:- {i}");
+    }
 
 
-
-
-
-
+}
 
 
 
