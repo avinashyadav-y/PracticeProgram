@@ -1,15 +1,4 @@
-﻿
-using System.Diagnostics.CodeAnalysis;
-using System.Net.Http.Headers;
-using System.Net.Sockets;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
-using System.Threading.Channels;
-using System.Transactions;
-using System.Xml;
-using System.Xml.Linq;
-
-/*public class Student
+﻿/*public class Student
 {
      string names;
      string addres;
@@ -1533,132 +1522,107 @@ class Program
 }
 
 */
-       
+/*      
 class Myclass
 {
-    public abstract class Add
-    {
-        public abstract  int sum(int i, int j);
+   public abstract class Add
+   {
+       public abstract  int sum(int i, int j);
 
-        public virtual void Print()
-        {
-            Console.WriteLine("This is non abstract virtual method");
-        }
-    }
-
-    
-    public class MathsOP : Add
-    {
-        public override int sum(int i, int j)
-        {
-            i = 50;
-            j = 50;
-            return i + j;
-        }
-        public override void Print()
-        {
-            base.Print();
-        }
-    }
-    static void Main(string[] args)
-    {
-        MathsOP mt = new MathsOP();
-        int i=mt.sum(50,50);
-        Console.WriteLine( i);
-
-        mt.Print();
-        
-    }
-}
+       public virtual void Print()
+       {
+           Console.WriteLine("This is non abstract virtual method");
+       }
+   }
 
 
+   public class MathsOP : Add
+   {
+       public override int sum(int i, int j)
+       {
+           i = 50;
+           j = 50;
+           return i + j;
+       }
+       public override void Print()
+       {
+           base.Print();
+       }
+   }
+   static void Main(string[] args)
+   {
+       MathsOP mt = new MathsOP();
+       int i=mt.sum(50,50);
+       Console.WriteLine( i);
 
+       mt.Print();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+   }
+}*/
 /*
 class Program
 {
+   abstract class Person
+   {
+       public string FirestName;
+       public string LastName;
+       public int age;
+       public long PhoneNumber;
+       public abstract void Printdetails();
 
-    abstract class Person
-    {
-        public string FirestName;
-        public string LastName;
-        public int age;
-        public long PhoneNumber;
-        public abstract void Printdetails();
+   }
+   class Student : Person
+   {
+       public int rollnum;
+       public int feese;
+       public override void Printdetails()
+       {
+           string name = this.FirestName + "  " + this.LastName;
+           Console.WriteLine($"Student Firest name is {name}");
+           Console.WriteLine("Student age is {0}", this.age);
+           Console.WriteLine("Student Phone number is {0}", this.PhoneNumber);
+           Console.WriteLine("Student Roll number is {0}", this.rollnum);
+           Console.WriteLine("Student feese is {0}", this.feese);
+       }
+   }
+   class Teacher : Person
+   {
+       public string qualification;
+       public int salary;
 
-    }
-    class Student : Person
-    {
-        public int rollnum;
-        public int feese;
+       public override void Printdetails()
+       {
+           string name = this.FirestName + "  " + this.LastName;
+           Console.WriteLine($"Teacher Firest name is {name}");
+           Console.WriteLine("Teacher age is {0}", this.age);
+           Console.WriteLine("Teacher Phone number is {0}", this.PhoneNumber);
+           Console.WriteLine("Teacher Qualification is {0}", this.qualification);
+           Console.WriteLine("Teacher salary is {0}", this.salary);
 
+       }
 
-        public override void Printdetails()
-        {
-            string name = this.FirestName + "  " + this.LastName;
-            Console.WriteLine($"Student Firest name is {name}");
-            Console.WriteLine("Student age is {0}", this.age);
-            Console.WriteLine("Student Phone number is {0}", this.PhoneNumber);
-            Console.WriteLine("Student Roll number is {0}", this.rollnum);
-            Console.WriteLine("Student feese is {0}", this.feese);
+   }
+   static void Main(string[] args)
+   {
+       Console.WriteLine("This is The Student details ");
+       Student avi = new Student();
+       avi.FirestName = "Avinash ";
+       avi.LastName = "Yadav";
+       avi.age = 21;
+       avi.PhoneNumber = 7620114166;
+       avi.rollnum = 75;
+       avi.feese = 40;
+       avi.Printdetails();
 
-        }
-
-
-
-
-    }
-    class Teacher : Person
-    {
-        public string qualification;
-        public int salary;
-
-        public override void Printdetails()
-        {
-            string name = this.FirestName + "  " + this.LastName;
-            Console.WriteLine($"Teacher Firest name is {name}");
-            Console.WriteLine("Teacher age is {0}", this.age);
-            Console.WriteLine("Teacher Phone number is {0}", this.PhoneNumber);
-            Console.WriteLine("Teacher Qualification is {0}", this.qualification);
-            Console.WriteLine("Teacher salary is {0}", this.salary);
-
-        }
-
-    }
-    static void Main(string[] args)
-    {
-        Console.WriteLine("This is The Student details ");
-        Student avi = new Student();
-        avi.FirestName = "Avinash ";
-        avi.LastName = "Yadav";
-        avi.age = 21;
-        avi.PhoneNumber = 7620114166;
-        avi.rollnum = 75;
-        avi.feese = 40;
-        avi.Printdetails();
-
-        Console.WriteLine("--------------------------------------------------------------------------------");
-        Console.WriteLine("This is Teachers Details showed");
-        Teacher san = new Teacher();
-        san.FirestName = "Sanjay Sir";
-        san.LastName = "salunkhe";
-        san.age = 43;
-        san.PhoneNumber = 9975163113;
-        san.qualification = "MCA SET ";
-        san.salary = 50000;
+       Console.WriteLine("--------------------------------------------------------------------------------");
+       Console.WriteLine("This is Teachers Details showed");
+       Teacher san = new Teacher();
+       san.FirestName = "Sanjay Sir";
+       san.LastName = "salunkhe";
+       san.age = 43;
+       san.PhoneNumber = 9975163113;
+       san.qualification = "MCA SET ";
+       san.salary = 50000;
 
        san.Printdetails();
    }
@@ -1815,7 +1779,7 @@ class Program
         public Circle (double radius)
         {
             Radius = radius;
-    }
+        }
 
         public override double  Area()
         {
@@ -1842,7 +1806,7 @@ class Program
         Square sqr = new Square(10);
         Console.WriteLine("Area of Circle" + cs.Area());
         Console.WriteLine( "Area of Square "+ sqr .Area ());
-
+        
     }
 }
 */
@@ -1854,7 +1818,7 @@ class Account
     public int AccountNumber;
     public double Balance;
 
-
+   
     public Account(int accountNumber, double balance)
     {
         AccountNumber = accountNumber;
@@ -1898,7 +1862,7 @@ class Program
 /*
  * 
  * Method Overloading Example
-
+ 
 class Program
 {
     public class Student
@@ -2015,43 +1979,11 @@ namespace codeLab
                 cr.Engine();
                 cr.greet ();
             }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-*/
-/*
+  /*
 class Program
 {
     static void Main(string[] args)
@@ -2127,7 +2059,7 @@ class Program
 }
 
 */
-
+/*
 
 class Myclass
 {
@@ -2161,15 +2093,902 @@ class Myclass
     }
 
 
+}*/
+
+/*
+class Program
+{
+    static void Main()
+    {
+        Information information = new Information();
+
+        string s = information.Name;
+
+        Console.WriteLine(s);
+    }
+
+    public class Information
+    {
+        private string Password = "abc123";
+
+        public String Name
+        {
+            get { return Password; }//For read and Return
+
+            set { Password = value; }// set for Field value
+
+        }
+    }
+
+}*/
+/*
+class Program
+{
+    public class BankAccount
+    {
+        private decimal bal;
+
+        public decimal Bal
+        {
+
+            get { return bal; }
+
+            set { bal = value; }
+
+        }
+
+        public void  Deposite(decimal amount)
+        {
+
+            Bal = Bal + amount;
+            Console.WriteLine(amount);
+        }
+        public void Withdraw(decimal amount)
+        {
+            bal = bal - amount;
+            Console.WriteLine();
+        }
+    }
+    static void Main(string[] args)
+    {
+        BankAccount account = new BankAccount();
+        account.Deposite(5000);
+        account.Withdraw(2000);
+        Console.WriteLine($"The Remaining Balance is {account.Bal}");
+    } 
+}
+*/
+/*
+
+public class Student
+{
+    private string username;
+
+    private string password;
+
+    private int Age;
+
+    public  string Username
+    {
+        get { return username; }
+        set { username = value; }
+    }
+    public string Password
+    {
+        get { return password; }
+                
+        set
+        {
+            if (value.Length > 5 )
+            {
+                password = value;
+            }
+            else
+            {
+                Console.WriteLine("password must be greater than 5 character ");
+            }
+
+        }
+
+
+    }
+    public int Age1
+    {
+        get { return Age; }
+
+        set { 
+            if (value>18)
+            {
+                Age = value;
+            }
+            else
+            {
+                Console.WriteLine("Age must be greater than 18");
+            }
+
+        }
+           
+        
+    }
+    public void Display()
+    {
+        Console.WriteLine($"Username: {Username}");
+        Console.WriteLine($"Password: {Password}");
+        Console.WriteLine( $"Age{ Age}");
+    }
+    static void Main(string[] args)
+    {
+        Student student = new Student();
+        student.Username = "Avinash";
+        student.Password = "123456";
+        student.Age1 = 21;
+        student.Display();
+    }
+}
+*/
+/*
+public class Person
+{
+    private string name;
+    private int age;
+    private string address;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+    public int Age
+    {
+        get { return age; }
+        set { age = value; }
+
+    }
+    public string Address { get { return address ; }
+        set { address = value; }
+    }
+
+    static void Main(string[] args)
+    {
+        Person person = new Person();
+        person.Name = "Avinash Yadav";
+        person.Age = 21;
+        person.Address = "Akluj, Solapur";
+        Console.WriteLine($"Person Name  is {person.Name}");
+        Console.WriteLine($"Person Age  is {person.Age}");
+        Console.WriteLine($"Person address is {person.address }");
+
+
+    }
+}*/
+
+// =>--------------------Exception Handling Example --------------------------------------<=
+/*
+ * 
+ * 
+class Program
+{
+
+
+    static void Main(string[] args)
+    {
+
+        Student s = new Student();
+
+        s.Info();
+
+    }
+    public class Student
+    {
+        public void Info()
+        {
+            try
+            {
+                int num1 = 10;
+                int num2 = 0;
+
+
+                Console.WriteLine(num1 / num2); // error
+
+
+            }
+
+            catch (IndexOutOfRangeException ex)
+            {
+
+                Console.WriteLine(ex.Message);
+
+                Console.WriteLine("Child class");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                Console.WriteLine("base class");
+            }
+
+        }
+
+
+    }
+
+
+}*/
+/*
+class Program
+{
+   
+    public class Student
+    {
+        public void Info()
+        {
+
+            try
+            {
+                int[] num = { 1, 2, 3, 4 };
+
+                Console.WriteLine(num[6]);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Child class");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Base class");
+            }
+
+
+        }
+
+
+    }
+    static void Main(string[] args)
+    {
+
+        Student s = new Student();
+
+        s.Info();
+
+    }
+}
+*/
+/*
+class Program
+{
+    static void Main(string[] args)
+    {
+        try
+        {
+           string addres = "Akluj";
+            Console.WriteLine( addres );
+
+            string name = null ;
+            Console.WriteLine( name.Length );
+
+
+        }
+        catch (NullReferenceException   ex)
+        {
+
+            Console.WriteLine(ex.Message );
+        }
+       
+        finally
+        {
+            Console.WriteLine("This is finally block");
+        }
+        Program program = new Program();
+
+
+    }
+}*/
+
+
+// creating Example of single cast Delegate
+/*
+namespace MyCode
+{
+    public delegate void MyDelegate();
+    class Myclass
+    {
+        public void show()
+        {
+            Console.WriteLine( "This is show Method called ");
+        }
+
+        public void Display()
+        {
+            Console.WriteLine( "This is Display Method Called in Delegate ");
+        }
+
+        public static void Details()
+        {
+            Console.WriteLine( "This is the static method call using class name.Method name ");
+        }
+        static void Main(string[] args)
+        {
+            Myclass std = new Myclass();
+
+            MyDelegate Del = new MyDelegate (std.show );
+            MyDelegate Del2 = new MyDelegate(std.Display);
+            MyDelegate del3 = new MyDelegate (Myclass.Details);
+
+            Del();
+            Del2();
+            del3(); 
+            Console.WriteLine("This is the Example of Delegate");
+
+        }
+
+    }
+}
+*/
+/*
+public delegate void del(int x, int y);
+
+class Program
+{
+
+    static void Main(string[] args)
+    {
+        Student std = new Student();
+
+        del d = new del(std.Add);
+        del d2 = new del(std.Sub);
+
+        d(4, 6);
+        d2(10, 5);
+
+    }
+
+}
+public class Student
+{
+    public void Add(int x, int y)
+    {
+        int z = x + y;
+
+        Console.WriteLine(z);
+
+    }
+    public void Sub(int a, int b)
+    {
+        Console.WriteLine(a - b);
+    }
+}
+*/
+/*
+class Program
+{
+    internal delegate void Del();
+
+    static void Main(string[] args)
+    {
+        Math mt = new Math();
+
+        Del d = new Del(mt.Print);
+
+        d();
+
+    }
+
+}
+public class Math
+{
+    public void Print()
+    {
+        Console.WriteLine("Math oprations");
+    }
+}
+*/
+
+/*
+namespace Mathcode
+{
+    public delegate void del(int i, int j);
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student std = new Student();
+
+            del d = new del(std.English_Mark);
+
+            del d2 = new del(std.Math_Mark);
+
+            del d3 =  d + d2; // Multicast Delegate
+
+
+
+
+        }
+    }
+
+    public class Student
+    {
+
+        public void Math_Mark(int x, int y)
+        {
+            int i = x + y;
+            Console.WriteLine(i);
+        }
+        public void English_Mark(int a, int b)
+        {
+            int j = a + b;
+            Console.WriteLine(j);
+        }
+
+    }
+
+}
+*/
+/*
+class Program
+{
+    public delegate void Mydel();
+
+    public class  Student
+    {
+        public void Student_Details()
+        {
+            Console.WriteLine("Name :- ABC ");
+            Console.WriteLine( "Student ID :- 779920062004");
+            Console.WriteLine( "Cource Name:- Bachlores in computer science ");
+            Console.WriteLine( "Year : TY 2025 ");
+        }
+        public void Colege_Details()
+        {
+            Console.WriteLine("College Name : Greenfingers Collage ");
+            Console.WriteLine("Collage ID : 123456789");
+            Console.WriteLine("Collage Address : Akluj, Solapur");
+        }
+
+        public void Student_Marks()
+        {
+            Console.WriteLine("Marks in Advanced Python : 80");
+            Console.WriteLine("Marks in React Redux     : 75");
+            Console.WriteLine("Marks in Asp.Net Core : 90");
+        }
+        static void Main(string[] args)
+        {
+            Student std = new Student();
+
+            Mydel md = new Mydel(std.Colege_Details);
+            Mydel md2 = new Mydel(std.Student_Details);
+            Mydel md3= new Mydel (std.Student_Marks);
+
+            md();
+            md2();
+            md3();
+
+        }
+
+    }
+}*/
+// This is the Example of Multicast Delegate
+
+
+using System.Collections;
+using System.Runtime.CompilerServices;
+/*
+class Myclass
+{
+
+    public delegate void Muldel();
+
+    public class Employee
+    {
+        public void Emp_Details()
+        {
+            Console.WriteLine( "Employee Name:- Emp1 ");
+            Console.WriteLine( "Employee Id :- 7799");
+            Console.WriteLine( "Employee Department :- IT ");
+            Console.WriteLine( "Employee Salary :- 5000000 ");
+
+        }
+        public void Com_Details()
+        {
+            Console.WriteLine( "Company Name : Tata Counsltancy Services ");
+            Console.WriteLine( "Company Location: Pune Sahyadri IT Park  ");
+            Console.WriteLine( "Shift Timing : Morning Shift");
+
+        }
+        public void Com_Dept()
+        {
+            Console.WriteLine( "Departments:.....");
+            Console.WriteLine( "HR ");
+            Console.WriteLine( "IT ");
+            Console.WriteLine( "SALES");
+            Console.WriteLine( "MANAGEMENT");
+
+        }
+        static void Main(string[] args)
+        {
+            Employee Emp = new Employee ();
+
+            Muldel md = new Muldel(Emp.Emp_Details);
+            Muldel md2 = new Muldel(Emp.Com_Dept);
+            Muldel md3 = new Muldel (Emp.Com_Details );
+
+            Muldel md4 = md + md2 + md3;
+            md4();
+
+        }
+
+    }
+}
+*/
+
+/*
+class Program
+{
+    public delegate string  Mydel( string names);
+
+    public class Student
+    {
+        public string Show(string name)
+        {
+            Console.WriteLine( name );
+            return name;
+        }
+        public string Show1(string LastName)
+        {
+            Console.WriteLine( LastName );
+            return LastName;
+        }
+        public string Display(string SName)
+        {
+            Console.WriteLine( SName );
+            return SName;
+        }
+
+        static void Main(string[] args)
+        {
+            Student std = new Student();
+
+            Mydel md = new Mydel(std.Show);
+            Mydel md2 = new Mydel(std.Show1);
+            Mydel md3 = new Mydel(std.Display);
+
+            md("Avinash Yadav");
+            md2 ("Sanket Madane");
+            md3 ("Sharad");
+            Mydel md4 = md + md2 + md3; 
+
+
+
+
+
+        }   
+    }
+}*/
+/*
+class Program
+{
+    public delegate int Del(int a, int b);
+    
+    public class Math
+    {
+        public int Add(int x, int y)
+        {
+            return x + y;
+        }
+        public int Sub(int x, int y)
+        {
+            return x - y;
+        }
+
+    }
+    static void Main(string[] args)
+    {
+        Math m = new Math();
+
+        Del d = new Del(m.Add);
+
+        int i = d(10, 20);
+
+        Console.WriteLine(i);
+
+        Del d1 = new Del(m.Sub);
+
+        int j = d1(30, 10);
+
+        Console.WriteLine(j);
+
+
+    }
+
+
+
+
+}
+*/
+
+/*
+class Program
+{
+    public delegate void Mydel(int x, int y);
+    public class Math
+    {
+        public void Add(int a, int b)
+        {
+            Console.WriteLine($"Addition is {a + b}");
+        }
+        public void Sub(int a, int b)
+        {
+            Console.WriteLine($"Subtraction is {a - b}");
+        }
+    }
+    static void Main(string[] args)
+    {
+        Math m = new Math();
+        Mydel md = new Mydel(m.Add);
+        Mydel md2 = new Mydel(m.Sub);
+        md += m.Sub;
+        
+        md(10, 20);
+    }
+}
+*/
+// Delegate Example with anonymous method :- 
+/*
+public delegate string  Del(string name);
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Del del = delegate (string name)
+        {
+           
+            return name;
+        };
+
+       string i= del("Avinash");
+        Console.WriteLine( i);
+        
+
+    }
+
+}
+*/
+
+/*
+public delegate string Del( int x , int y);
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Del del = delegate (int x , int y)
+        {
+           return $"The sum of {x} and {y} is {x + y}";
+        };
+    }
+}
+*/
+/*
+class Program
+{
+    public delegate string Del(string Addres);
+    static void Main(string[] args)
+    {
+        Del del = delegate (string Addres)
+        {
+            return Addres;
+            Console.WriteLine( Addres );
+        };
+        del("Akluj");
+
+
+    }
+}
+*/
+/*
+class Example
+{
+    public static void ShowArray<T>(T[] arr)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Console.WriteLine(arr[i]);
+        }
+    }
+    
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        int[] numbers = new int[3];
+        numbers[0] = 10;
+        numbers[1] = 20;
+        numbers[2] = 30;
+
+        string[] names = {
+            "Avinash",
+            "Sanket",
+            "Sharad"
+        };
+
+        double [] prices = { 10.5, 20.75, 30.99 };  
+        Example.ShowArray(numbers);
+        Example.ShowArray(names);
+        Example.ShowArray(prices);
+
+
+
+
+    }
+}
+*/
+
+/*class Program 
+{
+
+
+    static void Main(string[] args)
+    {
+        string[] first_Name = new string[3];
+
+        first_Name[0] = "Amar";
+        first_Name[1] = "Jay";      //string s
+        first_Name[2] = "Komal";
+
+
+        //Console.WriteLine(first_Name[1]);//"Jay"
+
+        foreach (string s in first_Name)
+        {
+            Console.WriteLine(s);
+        }
+
+    }
+}
+*/
+/*
+// Example of Array list in C#
+ArrayList arrayList = new ArrayList();
+
+
+
+arrayList.Insert(,"");
+
+//arrayList.RemoveAt(2);
+
+
+foreach (var i in arrayList)
+{
+Console.WriteLine(i);
+}
+*/
+
+
+// Param keyword used to Pass multiple parameters inside the method 
+/*
+static void Main()
+{
+    Print("Pratima", "Vivek", "Harshal", "Neha", "Komal", "Amit");
+
+}
+//string
+static void Print(params string[] str)
+{
+
+    foreach (string s in str)
+    {
+        Console.WriteLine(s);
+    }
 }
 
+*/
+/*
+static void Main()
+{
+
+    Mark("Ruchira", 90, 95, 70, 80);
+
+
+}
+//string
+static void Mark(string name, params int[] number)
+{
+    if (number == null)
+    {
+        Console.WriteLine("Kindly pass marks inputs");
+    }
+    int avg = 0;
+
+    foreach (int m in number)
+    {
+        avg += m;
+    }
+
+    avg = avg / number.Length;
+
+    Console.WriteLine($"Avg mark {name} is {avg}");
+
+}
+*/
+/*
+static void Main()
+{
+
+    Mark("Ruchira");
+
+
+}
+//string
+static void Mark(string name, params int[] number)
+{
+    try
+    {
+        if (number == null)
+        {
+            Console.WriteLine("Kindly pass marks inputs");
+        }
+        int avg = 0;
+
+        foreach (int m in number)
+        {
+            avg += m;
+        }
+
+        try
+        {
+            avg = avg / number.Length;
+        }
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine("Kindly pass marks inputs");
+        }
 
 
 
+        Console.WriteLine($"Avg mark {name} is {avg}");
+
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
 
 
+}
+*/
+class Program
+{
+    static void Main()
+    {
+        //Contiue
+
+        // 1 to 10 
+
+        string[] str = new string[4];
+
+        str[0] = "A";
+        str[1] = "B";
+        str[2] = "C";
+        str[3] = "D";
 
 
+        foreach (string str2 in str)
+        {
+            if (str2 == "C")
+            {
+                continue;
+            }
+
+            Console.WriteLine(str2);
+        }
+    }
+
+}
 
 
 
